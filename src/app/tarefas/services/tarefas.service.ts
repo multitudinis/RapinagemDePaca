@@ -17,7 +17,7 @@ export class TarefasService {
     return this.httpClient.get<Tarefa[]>(this.API)
     .pipe(
       first(),
-      delay(5000),
+      delay(1000),
       tap(tarefas => console.log(tarefas))
     )
   }
