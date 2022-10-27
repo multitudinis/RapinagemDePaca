@@ -9,6 +9,8 @@ import { delay, first, tap } from 'rxjs';
 })
 export class TarefasService {
 
+  // Quando estiver usando um banco real usar esta rota para o proxy.conf.js 
+  // private readonly API = 'api/tarefas
   private readonly API = '/assets/tarefas.json';
 
   constructor(private httpClient: HttpClient) { }
