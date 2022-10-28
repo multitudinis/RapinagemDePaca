@@ -5,6 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import { TarefasService } from '../services/tarefas.service';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tarefas',
@@ -14,13 +15,15 @@ import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/err
 export class TarefasComponent implements OnInit {
 
   tarefas: Observable <Tarefa[]>;
-  displayedColumns = ['name', 'category'];
+  displayedColumns = ['name', 'category', 'actions'];
 
   // tarefasService: TarefasService;
 
   constructor(
     private tarefasService: TarefasService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute
     ) {
     // this.tarefas = [];
     // this.tarefasService = new TarefasService();
@@ -44,4 +47,7 @@ export class TarefasComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onAdd(){
+    this.router.navigate(['nova'], {relativeTo: this.route});
+  }
 }
