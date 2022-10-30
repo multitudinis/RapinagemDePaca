@@ -15,7 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class TarefasComponent implements OnInit {
 
   tarefas: Observable <Tarefa[]>;
-  displayedColumns = ['name', 'category', 'actions'];
+  displayedColumns = ['name', 'category', 'coordenador', 'actions'];
 
   // tarefasService: TarefasService;
 

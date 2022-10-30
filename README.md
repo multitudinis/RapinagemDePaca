@@ -1,5 +1,5 @@
 # Ao clonar o projeto, antes de rodar é preciso rodar os seguintes comandos:
-npm install
+npm install / 
 ng add @angular/material
 
 # CrudAngular

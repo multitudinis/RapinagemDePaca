@@ -19,8 +19,12 @@ export class TarefasService {
     return this.httpClient.get<Tarefa[]>(this.API)
     .pipe(
       first(),
-      delay(1000),
+      delay(333),
       tap(tarefas => console.log(tarefas))
     )
+  }
+
+  save(record: Tarefa){
+    return this.httpClient.post<Tarefa>(this.API, record);
   }
 }

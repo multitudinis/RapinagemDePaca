@@ -2,6 +2,23 @@
     width: 100%;
 }
 
+.left1{
+    column-count: 2;
+}
+
+.left{
+    margin: 3em;
+}
+
+.right1{
+    float: right;
+}
+
+.right{
+    margin: 1em;
+
+}
+
 mat-card {
     max-width: 80%;
     margin: 2em auto;
