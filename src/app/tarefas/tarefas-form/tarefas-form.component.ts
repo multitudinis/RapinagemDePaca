@@ -1,7 +1,7 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Action } from 'rxjs/internal/scheduler/Action';
 import { TarefasService } from '../services/tarefas.service';
 
 @Component({
@@ -16,10 +16,11 @@ form: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
     private service: TarefasService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private location: Location
     ) {
     this.form = this.formBuilder.group({
-      name: [null],
+      name: new FormControl(''),
       category: [null],
       descricaoSintetica: [null],
       descricaoAnalitica: [null],
@@ -45,17 +46,22 @@ form: FormGroup;
   }
   onSubmit(){
     this.service.save(this.form.value)
-    .subscribe(result => console.log(result), error => {
+    .subscribe(result => this.onSuccess(), error => {
       this.onError()
     });
   }
 
   onCancel(){
-    
+    this.location.back();    
+  }
+
+  onSuccess(){
+    this.snackBar.open("Tarefa salva com sucesso!", '', {duration: 1000})
+    this.onCancel();
   }
 
   onError(){
-    this.snackBar.open("Erro ao salvar tarefa", '', {duration: 1000})
+    this.snackBar.open("Erro ao salvar tarefa.", '', {duration: 1000})
   }
 
 }
