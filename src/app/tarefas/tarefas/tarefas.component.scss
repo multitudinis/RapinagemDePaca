@@ -9,3 +9,35 @@ table {
   align-items: center;
   justify-content: center;
 }
+
+#ponto{
+    font-size: 15px;
+    height: 15px ;
+    width: 15px ;
+}
+
+td{
+  margin: 1em;
+}
+
+button{
+  margin: 1em;
+}
+
+#btn {
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 1em;
+}
+
+.red {
+  color: red;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.green {
+  color: green;
+}

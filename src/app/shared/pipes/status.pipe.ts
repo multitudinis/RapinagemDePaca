@@ -1,15 +1,16 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'category'
+  name: 'status'
 })
-export class CategoryPipe implements PipeTransform {
+export class StatusPipe implements PipeTransform {
 
   transform(value: string): string {
     switch(value){
-      case 'estruturante': return 'code';
-      case 'planejamento': return 'circle'
+      case 'estruturante': return 'green';
+      case 'planejamento': return 'red';
     }
     return 'computer';
   }
+
 }

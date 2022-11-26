@@ -1,5 +1,11 @@
 <mat-card>
-  <mat-toolbar color="primary"> Tarefas em andamento</mat-toolbar>
+  <mat-toolbar color="primary">
+
+    Tarefas em andamento
+    <button mat-mini-fab color="accent" aria-label="Adiciona uma tarefa" id="btn">
+    <mat-icon (click)="onAdd()" >add</mat-icon>
+  </button>
+  </mat-toolbar>
   <div *ngIf="tarefas | async as tarefas; else loading">
   <table mat-table [dataSource]="tarefas" class="mat-elevation-z8">
 
@@ -7,8 +13,8 @@
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Name </th>
     <td mat-cell *matCellDef="let tarefas">
-      <mat-icon aria-hidden="false" aria-label="Categoria da tarefa">{{ tarefas.category | category}}</mat-icon>
-       {{tarefas.name}} 
+      <mat-icon id="ponto" ngClass="{{tarefas.category | status}}"> circle </mat-icon>
+      {{tarefas.name}} 
     </td>
   </ng-container>
 
@@ -27,12 +33,10 @@
     <!-- Weight Column -->
     <ng-container matColumnDef="actions">
          
-      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>
+        
+      </mat-header-cell>
       <mat-cell *matCellDef="let tarefas">
-        <button mat-mini-fab color="accent" aria-label="Adiciona uma tarefa">
-          <mat-icon (click)="onAdd()" >add</mat-icon>
-        </button>
-
         <button mat-mini-fab color="primary" aria-label="Editar tarefa">
           <mat-icon>edit</mat-icon>
         </button>
@@ -40,6 +44,7 @@
         <button mat-icon-button color="warn" aria-label="Editar tarefa">
           <mat-icon>delete</mat-icon>
         </button>
+        
       </mat-cell>
     </ng-container>
     

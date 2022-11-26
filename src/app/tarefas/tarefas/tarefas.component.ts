@@ -50,4 +50,15 @@ export class TarefasComponent implements OnInit {
   onAdd(){
     this.router.navigate(['nova'], {relativeTo: this.route});
   }
+
+  MyComponent() {
+    var status = "estruturante";
+      if (status = "estruturante") {
+        return '.red';
+      } else if (status = "planejamento") {
+        return 'yellow';
+      } else {
+        return 'green'
+      }
+  }
 }
