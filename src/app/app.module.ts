@@ -11,19 +11,20 @@ import { MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
-import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { SidenavListComponent } from './components/navigation/sidenav-list/sidenav-list.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { HeaderComponent } from './navigation/header/header.component';
+import { HeaderComponent } from './components/navigation/header/header.component';
+import { TarefasComponent } from './components/tarefas/tarefas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     SidenavListComponent,
-    HeaderComponent
+    HeaderComponent,
+    TarefasComponent
   ],
   imports: [
     BrowserModule,
