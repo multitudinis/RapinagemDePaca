@@ -1,13 +1,17 @@
+import { HomeComponent } from './components/home/home.component';
+import { TarefasComponent } from './components/tarefas/tarefas.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TarefasComponent } from './tarefas/tarefas/tarefas.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'tarefas'},
+  {path: '', pathMatch: 'full', redirectTo: 'home'},
   {
-    path: 'tarefas',
-    loadChildren: () => import('./tarefas/tarefas.module').then(m => m.TarefasModule)
-  }
+    path: 'home', component:HomeComponent
+  },
+  {
+    path: 'tarefas',component:TarefasComponent
+  },
+
 ];
 
 @NgModule({
