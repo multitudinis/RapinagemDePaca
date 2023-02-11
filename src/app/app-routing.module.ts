@@ -1,3 +1,4 @@
+import { NovaTarefaComponent } from './components/nova-tarefa/nova-tarefa.component';
 import { HomeComponent } from './components/home/home.component';
 import { TarefasComponent } from './components/tarefas/tarefas.component';
 import { NgModule } from '@angular/core';
@@ -11,7 +12,9 @@ const routes: Routes = [
   {
     path: 'tarefas',component:TarefasComponent
   },
-
+  {
+    path: 'nova-tarefa',component:NovaTarefaComponent
+  },
 ];
 
 @NgModule({
